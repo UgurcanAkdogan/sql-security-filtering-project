@@ -1,6 +1,3 @@
-Uğurcan, haklısın; Markdown formatı bazen kopyalarken birbirine girebiliyor. Senin için her şeyi tek bir blok içinde, en sade ve en profesyonel haliyle hazırladım.
-
-Aşağıdaki kutucuğun içindeki metni en başından en sonuna kadar tek seferde kopyala, GitHub'daki README.md dosyasının içindeki her şeyi silip bunu yapıştır:
 SQL Security Investigation: Filtering for Insights
 Project Overview
 
