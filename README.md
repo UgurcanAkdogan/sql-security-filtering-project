@@ -1,32 +1,37 @@
-SQL Security Investigation: Filtering for Insights
-Project Overview
+# SQL Security Filtering Project
 
-In this project, I acted as a cybersecurity professional investigating security incidents at a large organization. I analyzed data from the employees and log_in_attempts tables to identify potential threats and manage security updates. By using SQL filters like AND, OR, NOT, and LIKE, I retrieved specific information to help keep the organization's systems secure.
-Technical Tasks & SQL Queries
-Investigating After-Hours Failed Login Attempts
+This project demonstrates how SQL can be used to investigate security-related events and support operational security decisions inside an organization.
 
-I reviewed login activity that occurred after business hours (18:00) to identify failed attempts. I used the AND operator to filter for values greater than '18:00' in the login_time column and 0 in the success column.
-SELECT * FROM log_in_attempts WHERE login_time > '18:00' AND success = 0;
-Reviewing Login Attempts on Specific Dates
+Using data from the `log_in_attempts` and `employees` tables, I applied SQL filtering techniques to identify suspicious login behavior, review activity on specific dates, investigate geographic anomalies, and retrieve targeted employee groups for security updates.
 
-A suspicious event occurred between 2022-05-08 and 2022-05-09. I used the OR operator to pull all login records from these two specific dates to analyze the traffic volume.
-SELECT * FROM log_in_attempts WHERE login_date = '2022-05-08' OR login_date = '2022-05-09';
-Filtering Login Attempts Outside of Mexico
+## Project Objectives
 
-The security team confirmed that certain threats did not originate in Mexico. I used the NOT operator with the LIKE keyword and the % wildcard to exclude all attempts from Mexico (MEX and MEXICO).
-SELECT * FROM log_in_attempts WHERE NOT country LIKE 'MEX%';
-Identifying Marketing Employees in the East Building
+The goal of this project was to use SQL queries and filtering logic to:
 
-To apply a security patch to specific machines, I filtered the employees table for the Marketing department and office locations starting with 'East'.
-SELECT * FROM employees WHERE department = 'Marketing' AND office LIKE 'East%';
-Identifying Employees in Sales or Finance
+- Investigate suspicious login attempts
+- Analyze login activity by time, date, and location
+- Retrieve employee groups for security-related actions
+- Practice real-world use of `AND`, `OR`, `NOT`, and `LIKE`
 
-I gathered information for employees in the Sales and Finance departments for a specialized update. I used the OR operator to list all employees belonging to either department.
-SELECT * FROM employees WHERE department = 'Sales' OR department = 'Finance';
-Excluding IT Department from System Updates
+## Skills Demonstrated
 
-A system-wide update was required for everyone except the IT department. I used the NOT operator to find all employees whose department was not 'Information Technology'.
-SELECT * FROM employees WHERE NOT department = 'Information Technology';
-Summary
+- SQL query writing
+- Data filtering with conditional operators
+- Security log investigation
+- Employee record analysis
+- Pattern matching with `LIKE`
+- Applying SQL in a cybersecurity context
 
-Throughout this project, I demonstrated how to use SQL logical operators and pattern matching to transform raw data into actionable security insights. These queries allowed me to isolate suspicious login behavior and ensure that security protocols were correctly applied to the relevant employee machines.
+## Tools and Concepts Used
+
+- SQL
+- MariaDB-style query syntax
+- Operators:
+  - `AND`
+  - `OR`
+  - `NOT`
+  - `LIKE`
+- Wildcards:
+  - `%`
+
+
